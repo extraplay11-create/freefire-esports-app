@@ -1,0 +1,6 @@
+{
+  "name": "Free Fire Esports Hub",
+  "description": "Mobile esports tournament platform for Free Fire players with live matches, room keys, wallet deposits/cashouts, leaderboards, and admin controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

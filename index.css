@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-ff-orange: #ff5500;
+    --color-ff-orange-light: #ff7700;
+    --color-ff-yellow: #ffb700;
+    --color-ff-dark: #0a0c10;
+    --color-ff-card: #121620;
+    --color-ff-card-border: #232938;
+  }
+
+  body {
+    background-color: #07090e;
+    color: #f1f5f9;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Gaming Glows and Gradient Text */
+.ff-glow-orange {
+  box-shadow: 0 0 20px rgba(255, 85, 0, 0.4);
+}
+
+.ff-glow-orange-sm {
+  box-shadow: 0 0 10px rgba(255, 85, 0, 0.3);
+}
+
+.ff-border-glow {
+  border-color: rgba(255, 85, 0, 0.6);
+  box-shadow: 0 0 12px rgba(255, 85, 0, 0.25);
+}
+
+.ff-text-glow {
+  text-shadow: 0 0 10px rgba(255, 85, 0, 0.6);
+}
+
+.ff-gold-glow {
+  text-shadow: 0 0 10px rgba(255, 183, 0, 0.6);
+}
+
+.ff-card-bg {
+  background: linear-gradient(135deg, #131722 0%, #0d1018 100%);
+  border: 1px solid #232a3d;
+}
+
+.ff-card-bg-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.ff-card-bg-hover:hover {
+  border-color: #ff5500;
+  box-shadow: 0 4px 20px rgba(255, 85, 0, 0.2);
+}
+
+.ff-btn-primary {
+  background: linear-gradient(135deg, #ff6b00 0%, #d84300 100%);
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.ff-btn-primary:hover {
+  background: linear-gradient(135deg, #ff7b1a 0%, #ea4b00 100%);
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+.ff-btn-primary:active {
+  transform: translateY(0);
+}
+
+.ff-clip-path-badge {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.ff-clip-path-banner {
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+
+/* Custom Scrollbar for gaming feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1018;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff5500;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7700;
+}
+
+/* Flame animation pulse */
+@keyframes flamePulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-flame {
+  animation: flamePulse 2s infinite ease-in-out;
+}

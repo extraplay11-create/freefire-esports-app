@@ -1,0 +1,140 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and wallet stats",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "phone": { "type": "string", "maxLength": 20 },
+        "name": { "type": "string", "maxLength": 100 },
+        "ffIgn": { "type": "string", "maxLength": 50 },
+        "ffUid": { "type": "string", "maxLength": 30 },
+        "character": { "type": "string", "maxLength": 30 },
+        "avatar": { "type": "string", "maxLength": 500 },
+        "level": { "type": "number" },
+        "rank": { "type": "string", "maxLength": 30 },
+        "role": { "type": "string", "maxLength": 20 },
+        "walletBalance": { "type": "number" },
+        "bonusCoins": { "type": "number" },
+        "referralCode": { "type": "string", "maxLength": 30 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["phone", "name", "ffIgn", "ffUid"]
+    },
+    "Tournament": {
+      "title": "Tournament",
+      "description": "Custom room tournament data",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 100 },
+        "subtitle": { "type": "string", "maxLength": 100 },
+        "mode": { "type": "string", "maxLength": 30 },
+        "map": { "type": "string", "maxLength": 30 },
+        "type": { "type": "string", "maxLength": 50 },
+        "entryFee": { "type": "number" },
+        "prizePool": { "type": "number" },
+        "perKillReward": { "type": "number" },
+        "firstPrize": { "type": "number" },
+        "secondPrize": { "type": "number" },
+        "thirdPrize": { "type": "number" },
+        "totalSlots": { "type": "number" },
+        "filledSlots": { "type": "number" },
+        "startTime": { "type": "string" },
+        "status": { "type": "string", "maxLength": 30 },
+        "roomId": { "type": "string", "maxLength": 50 },
+        "roomPassword": { "type": "string", "maxLength": 50 },
+        "image": { "type": "string", "maxLength": 500 },
+        "badge": { "type": "string", "maxLength": 50 },
+        "organizer": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["title", "entryFee", "prizePool", "totalSlots"]
+    },
+    "Registration": {
+      "title": "Registration",
+      "description": "Player tournament enrollment and result proof",
+      "type": "object",
+      "properties": {
+        "tournamentId": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "userIgn": { "type": "string", "maxLength": 50 },
+        "userUid": { "type": "string", "maxLength": 30 },
+        "status": { "type": "string", "maxLength": 30 },
+        "resultStatus": { "type": "string", "maxLength": 30 },
+        "killsSubmitted": { "type": "number" },
+        "placementSubmitted": { "type": "number" },
+        "screenshotProof": { "type": "string", "maxLength": 1000 },
+        "prizeWon": { "type": "number" }
+      },
+      "required": ["tournamentId", "userId", "userIgn", "userUid"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "User wallet transaction record",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "type": { "type": "string", "maxLength": 50 },
+        "amount": { "type": "number" },
+        "status": { "type": "string", "maxLength": 30 },
+        "timestamp": { "type": "string" },
+        "description": { "type": "string", "maxLength": 200 }
+      },
+      "required": ["userId", "type", "amount"]
+    },
+    "WithdrawalRequest": {
+      "title": "WithdrawalRequest",
+      "description": "User UPI cashout payout request",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "userName": { "type": "string", "maxLength": 100 },
+        "amount": { "type": "number" },
+        "method": { "type": "string", "maxLength": 30 },
+        "paymentAddress": { "type": "string", "maxLength": 100 },
+        "status": { "type": "string", "maxLength": 30 },
+        "timestamp": { "type": "string" },
+        "txnHash": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["userId", "amount", "method", "paymentAddress"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Broadcast banner message",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 150 },
+        "content": { "type": "string", "maxLength": 500 },
+        "timestamp": { "type": "string" },
+        "badge": { "type": "string", "maxLength": 30 }
+      },
+      "required": ["title", "content"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User accounts and stats"
+    },
+    "/tournaments/{tournamentId}": {
+      "schema": { "$ref": "#/entities/Tournament" },
+      "description": "Esports tournament custom rooms"
+    },
+    "/registrations/{registrationId}": {
+      "schema": { "$ref": "#/entities/Registration" },
+      "description": "Tournament player registrations and proof"
+    },
+    "/transactions/{transactionId}": {
+      "schema": { "$ref": "#/entities/Transaction" },
+      "description": "Wallet transactions"
+    },
+    "/withdrawalRequests/{withdrawalId}": {
+      "schema": { "$ref": "#/entities/WithdrawalRequest" },
+      "description": "Cashout payout requests"
+    },
+    "/announcements/{announcementId}": {
+      "schema": { "$ref": "#/entities/Announcement" },
+      "description": "Global broadcast news"
+    }
+  }
+}
