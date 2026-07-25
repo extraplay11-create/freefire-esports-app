@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
 import { AppProvider, useApp } from './AppContext';
-
-import { TopHeader } from './TopHeader';
-import { MobileBottomNav } from './MobileBottomNav';
-import { DeviceWrapper } from './DeviceWrapper';
-import { AuthModal } from './AuthModal';
-import { HomeView } from './HomeView';
-import { TournamentListView } from './TournamentListView';
-import { JoinTournamentModal } from './JoinTournamentModal';
-import { MyMatchesView } from './MyMatchesView';
-import { LeaderboardView } from './LeaderboardView';
-import { WalletView } from './WalletView';
-import { ProfileView } from './ProfileView';
-import { AdminPanelView } from './AdminPanelView';
-
+import { TopHeader } from './components/TopHeader';
+import { MobileBottomNav } from './components/MobileBottomNav';
+import { DeviceWrapper } from './components/DeviceWrapper';
+import { AuthModal } from './components/AuthModal';
+import { HomeView } from './components/HomeView';
+import { TournamentListView } from './components/TournamentListView';
+import { JoinTournamentModal } from './components/JoinTournamentModal';
+import { MyMatchesView } from './components/MyMatchesView';
+import { LeaderboardView } from './components/LeaderboardView';
 import { Tournament } from './types';
 
 function AppContent() {
@@ -28,13 +23,11 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col font-sans selection:bg-[#ff5500] selection:text-white">
-      
+    <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col font-sans">
       <TopHeader onOpenAuth={() => setShowAuthModal(true)} />
 
       <main className="flex-1">
         <DeviceWrapper>
-          
           {activeTab === 'home' && (
             <HomeView onOpenJoinModal={handleOpenJoinModal} />
           )}
@@ -46,13 +39,6 @@ function AppContent() {
           {activeTab === 'matches' && <MyMatchesView />}
 
           {activeTab === 'leaderboard' && <LeaderboardView />}
-
-          {activeTab === 'wallet' && <WalletView />}
-
-          {activeTab === 'profile' && <ProfileView />}
-
-          {activeTab === 'admin' && <AdminPanelView />}
-
         </DeviceWrapper>
       </main>
 
@@ -68,7 +54,6 @@ function AppContent() {
         onClose={() => setSelectedTournamentForJoin(null)}
         onOpenAuth={() => setShowAuthModal(true)}
       />
-
     </div>
   );
 }
