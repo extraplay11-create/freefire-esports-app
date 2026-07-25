@@ -3,7 +3,7 @@ import { Trophy, Medal, Search, Flame, Crown, Swords, Award, Star } from 'lucide
 import { useApp } from '../AppContext';
 
 export const LeaderboardView: React.FC = () => {
-  const { leaderboard, currentUser } export const LeaderboardView: React.FC = () => {= useApp();
+  const { leaderboard, currentUser } = useApp();
 
   const [timeFilter, setTimeFilter] = useState<'weekly' | 'monthly' | 'alltime'>('alltime');
   const [searchQuery, setSearchQuery] = useState('');
