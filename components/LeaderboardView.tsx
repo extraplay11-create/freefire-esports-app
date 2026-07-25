@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Trophy, Medal, Search, Flame, Crown, Swords, Award, Star } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../AppContext';
 
 export const LeaderboardView: React.FC = () => {
-  const { leaderboard, currentUser } = useApp();
+  const { leaderboard, currentUser } export const LeaderboardView: React.FC = () => {= useApp();
 
   const [timeFilter, setTimeFilter] = useState<'weekly' | 'monthly' | 'alltime'>('alltime');
   const [searchQuery, setSearchQuery] = useState('');
