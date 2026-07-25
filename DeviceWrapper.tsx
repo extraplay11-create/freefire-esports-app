@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wifi, Battery, Signal, Smartphone } from 'lucide-react';
-import { useApp } from './context/AppContext';
+import { useApp } from './AppContext';
 
 interface DeviceWrapperProps {
   children: React.ReactNode;
