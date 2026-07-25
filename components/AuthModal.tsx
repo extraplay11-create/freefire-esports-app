@@ -15,7 +15,7 @@ import {
   RefreshCw,
   AlertCircle
 } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../AppContext';
 import { FREE_FIRE_CHARACTERS } from '../data/initialData';
 
 interface AuthModalProps {
