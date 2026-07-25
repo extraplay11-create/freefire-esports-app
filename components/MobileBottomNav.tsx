@@ -1,6 +1,6 @@
 import React from 'react';
 import { Home, Swords, Crosshair, Trophy, Wallet, User, ShieldCheck } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../AppContext';
 
 export const MobileBottomNav: React.FC = () => {
   const { activeTab, setActiveTab, currentUser, registrations } = useApp();
