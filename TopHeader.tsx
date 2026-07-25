@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Flame, Wallet, Shield, User as UserIcon, Smartphone, Monitor, Bell, Plus, RefreshCw, CheckCircle2 } from 'lucide-react';
-import { useApp } from '../AppContext';
+import { useApp } from '../context/AppContext';
 
 interface TopHeaderProps {
   onOpenAuth: () => void;
