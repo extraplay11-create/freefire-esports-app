@@ -14,7 +14,7 @@ import {
   ShieldAlert,
   X
 } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../AppContext';
 import { MatchRegistration, Tournament } from '../types';
 
 export const MyMatchesView: React.FC = () => {
