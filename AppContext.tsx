@@ -7,7 +7,7 @@ import {
   WithdrawalRequest, 
   LeaderboardUser, 
   Announcement 
-} from '../types';
+} from './types';
 import { 
   INITIAL_USER, 
   ADMIN_USER, 
