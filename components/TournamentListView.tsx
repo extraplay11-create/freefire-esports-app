@@ -14,7 +14,7 @@ import {
   X,
   ChevronRight
 } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../AppContext';
 import { Tournament, GameMode, GameMap } from '../types';
 
 interface TournamentListViewProps {
