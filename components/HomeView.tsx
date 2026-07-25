@@ -16,7 +16,7 @@ import {
   ShieldCheck,
   Star
 } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../AppContext';
 import { Tournament } from '../types';
 
 interface HomeViewProps {
