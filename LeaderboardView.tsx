@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Trophy, Medal, Search, Flame, Crown, Swords, Award, Star } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../AppContext';
 
 export const LeaderboardView: React.FC = () => {
   const { leaderboard, currentUser } = useApp();
