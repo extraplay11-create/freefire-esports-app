@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import { AppProvider, useApp } from './AppContext';
-import { TopHeader } from './components/TopHeader';
-import { MobileBottomNav } from './components/MobileBottomNav';
-import { DeviceWrapper } from './components/DeviceWrapper';
-import { AuthModal } from './components/AuthModal';
-import { HomeView } from './components/HomeView';
-import { TournamentListView } from './components/TournamentListView';
-import { JoinTournamentModal } from './components/JoinTournamentModal';
-import { MyMatchesView } from './components/MyMatchesView';
-import { LeaderboardView } from './components/LeaderboardView';
-import { WalletView } from './components/WalletView';
-import { ProfileView } from './components/ProfileView';
-import { AdminPanelView } from './components/AdminPanelView';
+
+import { TopHeader } from './TopHeader';
+import { MobileBottomNav } from './MobileBottomNav';
+import { DeviceWrapper } from './DeviceWrapper';
+import { AuthModal } from './AuthModal';
+import { HomeView } from './HomeView';
+import { TournamentListView } from './TournamentListView';
+import { JoinTournamentModal } from './JoinTournamentModal';
+import { MyMatchesView } from './MyMatchesView';
+import { LeaderboardView } from './LeaderboardView';
+import { WalletView } from './WalletView';
+import { ProfileView } from './ProfileView';
+import { AdminPanelView } from './AdminPanelView';
+
 import { Tournament } from './types';
 
 function AppContent() {
   const { activeTab } = useApp();
 
   const [showAuthModal, setShowAuthModal] = useState(false);
-  const [selectedTournamentForJoin, setSelectedTournamentForJoin] = useState<Tournament | null>(null);
+  const [selectedTournamentForJoin, setSelectedTournamentForJoin] =
+    useState<Tournament | null>(null);
 
   const handleOpenJoinModal = (tournament: Tournament) => {
     setSelectedTournamentForJoin(tournament);
@@ -26,12 +29,12 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col font-sans selection:bg-[#ff5500] selection:text-white">
-      {/* Sticky Gaming Top Navigation Bar */}
+      
       <TopHeader onOpenAuth={() => setShowAuthModal(true)} />
 
-      {/* Main View Area wrapped in Device Frame or Full Screen */}
       <main className="flex-1">
         <DeviceWrapper>
+          
           {activeTab === 'home' && (
             <HomeView onOpenJoinModal={handleOpenJoinModal} />
           )}
@@ -49,13 +52,12 @@ function AppContent() {
           {activeTab === 'profile' && <ProfileView />}
 
           {activeTab === 'admin' && <AdminPanelView />}
+
         </DeviceWrapper>
       </main>
 
-      {/* Mobile Bottom Thumb Navigation */}
       <MobileBottomNav />
 
-      {/* Modals */}
       <AuthModal
         isOpen={showAuthModal}
         onClose={() => setShowAuthModal(false)}
@@ -66,6 +68,7 @@ function AppContent() {
         onClose={() => setSelectedTournamentForJoin(null)}
         onOpenAuth={() => setShowAuthModal(true)}
       />
+
     </div>
   );
 }
