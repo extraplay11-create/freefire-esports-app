@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, CheckCircle2, Gamepad2, AlertCircle, Wallet, Plus, ShieldCheck, Flame } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../AppContext';
 import { Tournament } from '../types';
 
 interface JoinTournamentModalProps {
