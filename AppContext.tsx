@@ -7,7 +7,7 @@ import {
   WithdrawalRequest, 
   LeaderboardUser, 
   Announcement 
-} from './types';
+} from '../types';
 import { 
   INITIAL_USER, 
   ADMIN_USER, 
@@ -16,7 +16,7 @@ import {
   INITIAL_TRANSACTIONS, 
   INITIAL_LEADERBOARD, 
   INITIAL_ANNOUNCEMENTS 
-} from '../data/initialData';
+} from './data/initialData';
 
 interface AppContextType {
   currentUser: User | null;
