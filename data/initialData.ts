@@ -43,3 +43,12 @@ export const INITIAL_TRANSACTIONS: Transaction[] = [];
 export const INITIAL_LEADERBOARD: LeaderboardUser[] = [];
 
 export const INITIAL_ANNOUNCEMENTS: Announcement[] = [];
+
+export const FREE_FIRE_CHARACTERS = [
+  { name: 'Kelly' },
+  { name: 'Hayato' },
+  { name: 'Alok' },
+  { name: 'Chrono' },
+  { name: 'Wukong' },
+  { name: 'Moco' },
+];
